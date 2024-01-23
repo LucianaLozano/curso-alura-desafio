@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codificador/Decodificador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+  <h1>Codificador/Decodificador</h1>
+
+  <script>
+    function codificarTexto(texto) {
+      let textoCodificado = btoa(texto);
+      return textoCodificado;
+    }
+
+    function decodificarTexto(textoCodificado) {
+      try {
+        let textoDecodificado = atob(textoCodificado);
+        return textoDecodificado;
+      } catch (error) {
+        console.error("Erro ao decodificar o texto:", error);
+        return null;
+      }
+    }
+
+    let textoDoUsuario = prompt("Digite algum texto:");
+
+    let textoCodificado = codificarTexto(textoDoUsuario);
+
+    if (textoCodificado) {
+      console.log("Texto Original:", textoDoUsuario);
+      console.log("Texto Codificado:", textoCodificado);
+
+      alert("Texto Original: " + textoDoUsuario);
+      alert("Texto Codificado: " + textoCodificado);
+    }
+  </script>
+</div>
+
+</body>
+</html>
